@@ -1,0 +1,7 @@
+SOURCE_URL=https://github.com/Kareadita/Kavita/releases/download/v0.6.1/kavita-linux-arm64.tar.gz
+SOURCE_SUM=44ad4575b2d356aa95d7367838b73b9c36779ae613ffcb733804da1898e2a594
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=
+SOURCE_EXTRACT=true
