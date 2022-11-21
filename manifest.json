@@ -3,8 +3,8 @@
     "id": "kavita",
     "packaging_format": 1,
     "description": {
-        "en": "Fast, feature rich, cross platform reading server",
-        "fr": "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+        "en": "Media server for your comics, manga and books",
+        "fr": "Serveur multimédia pour vos bandes dessinées, mangas et livres"
     },
     "version": "0.6.1~ynh1",
     "url": "www.kavitareader.com",
