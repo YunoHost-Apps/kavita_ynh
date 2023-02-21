@@ -31,7 +31,6 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - OPDS-PS Support
 
 
-
 **Version incluse :** 0.7.1~ynh1
 
 **Démo :** https://demo.kavitareader.com/
