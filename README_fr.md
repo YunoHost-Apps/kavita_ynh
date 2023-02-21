@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # Kavita pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/kavita.svg)](https://dash.yunohost.org/appci/app/kavita) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/kavita.svg)](https://dash.yunohost.org/appci/app/kavita) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)
+
 [![Installer Kavita avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=kavita)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Kavita rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Kavita rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Kavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.
 
@@ -53,19 +54,19 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 
 
 
-**Version incluse :** 0.6.1~ynh1
+**Version incluse :** 0.7.1~ynh1
 
 **Démo :** https://demo.kavitareader.com/
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Kavita](./doc/screenshots/screenshot.gif)
+![Capture d’écran de Kavita](./doc/screenshots/screenshot.gif)
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <www.kavitareader.com>
-* Documentation officielle de l'admin : <https://wiki.kavitareader.com/en>
-* Dépôt de code officiel de l'app : <https://github.com/Kareadita/Kavita>
+* Site officiel de l’app : <www.kavitareader.com>
+* Documentation officielle de l’admin : <https://wiki.kavitareader.com/en>
+* Dépôt de code officiel de l’app : <https://github.com/Kareadita/Kavita>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_kavita>
 * Signaler un bug : <https://github.com/YunoHost-Apps/kavita_ynh/issues>
 
@@ -81,4 +82,4 @@ ou
 sudo yunohost app upgrade kavita -u https://github.com/YunoHost-Apps/kavita_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
