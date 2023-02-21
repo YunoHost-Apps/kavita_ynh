@@ -6,7 +6,7 @@
 # PHP APP SPECIFIC
 #=================================================
 
-pkg_dependencies="sqlite3"
+#REMOVEME? pkg_dependencies="sqlite3"
 
 #=================================================
 # PERSONAL HELPERS
