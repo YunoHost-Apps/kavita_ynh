@@ -37,7 +37,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 
 ## Screenshots
 
-![Screenshot of Kavita](./doc/screenshots/screenshot.gif)
+![Screenshot of Kavita](./doc/screenshots/screenshot.png)
 
 ## Documentation and resources
 
