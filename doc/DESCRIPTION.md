@@ -11,4 +11,3 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - Mixed media Libraries - Light Novels and Manga can be right next to each other
 - Fast and efficient library scans. Don't perform I/O if the underlying file hasn't changed.
 - OPDS-PS Support
-
