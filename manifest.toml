@@ -18,7 +18,7 @@ code = "https://github.com/Kareadita/Kavita"
 
 [integration]
 yunohost = ">= 11.1.9"
-architectures = "all"
+architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 ldap = false
 sso = false
@@ -45,6 +45,17 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+
+    api.url = "/api"
+    api.show_tile = false
+    api.protected= true
+    api.allowed = ["visitors", "all_users"]
+
+    hubs.url = "/hubs/*"
+    hubs.show_tile = false
+    hubs.protected= true
+    hubs.auth_header = false
+    hubs.allowed = ["visitors", "all_users"]
 
     [resources.apt]
     packages = "sqlite3"
