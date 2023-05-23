@@ -33,7 +33,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --source_id=$YNH_ARCH --keep="config"
+	ynh_setup_source --dest_dir="$install_dir" --keep="config"
 fi
 
 chmod 750 "$install_dir"
@@ -41,6 +41,16 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 chmod +x $install_dir/Kavita
 
+#=================================================
+# MODIFY A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Modifying a config file..." --weight=1
+
+url_path=${path#/}
+ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+
+chmod 600 "$install_dir/config/appsettings.json"
+chown $app:$app "$install_dir/config/appsettings.json"
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
