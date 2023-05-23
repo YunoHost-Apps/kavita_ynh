@@ -26,6 +26,21 @@ ynh_script_progression --message="Updating NGINX web server configuration..." --
 ynh_change_url_nginx_config
 
 #=================================================
+# SPECIFIC MODIFICATIONS
+#=================================================
+# CONFIGURE Kavita
+#=================================================
+ynh_backup_if_checksum_is_different --file="$install_dir/config/appsettings.json"
+
+domain=$new_domain
+url_path=${new_path#/}
+
+ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+
+chmod 400 "$install_dir/config/appsettings.json"
+chown $app:$app "$install_dir/config/appsettings.json"
+
+#=================================================
 # GENERIC FINALISATION
 #=================================================
 # START SYSTEMD SERVICE

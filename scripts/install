@@ -35,6 +35,17 @@ ynh_add_systemd_config
 yunohost service add $app --description="Cross platform reading server" --log="/var/log/$app/$app.log"
 
 #=================================================
+# MODIFY A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Modifying a config file..." --weight=1
+
+url_path=${path#/}
+ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+
+chmod 600 "$install_dir/config/appsettings.json"
+chown $app:$app "$install_dir/config/appsettings.json"
+
+#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1

@@ -41,6 +41,17 @@ chown -R $app:www-data "$install_dir"
 chmod +x $install_dir/Kavita
 
 #=================================================
+# MODIFY A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Modifying a config file..." --weight=1
+
+url_path=${path#/}
+ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+
+chmod 600 "$install_dir/config/appsettings.json"
+chown $app:$app "$install_dir/config/appsettings.json"
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1

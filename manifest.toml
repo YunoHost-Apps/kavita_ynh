@@ -19,7 +19,7 @@ code = "https://github.com/Kareadita/Kavita"
 [integration]
 yunohost = ">= 11.1.19"
 architectures = ["amd64", "arm64", "armhf"]
-multi_instance = false
+multi_instance = true
 ldap = false
 sso = false
 disk = "50M"
