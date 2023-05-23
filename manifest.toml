@@ -49,7 +49,6 @@ ram.runtime = "50M"
     armhf.sha256 = "3bf7aac85f51432c8cc0a46ea885bb0167b03e9c0209858a76b1785f884cf104"
 
     [resources.ports]
-    main.default = 5000
     
     [resources.system_user]
 
