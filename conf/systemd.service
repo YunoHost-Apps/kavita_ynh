@@ -1,5 +1,5 @@
 [Unit]
-Description=Kavita Server
+Description=Kavita: Media server for your comics
 After=network.target
 
 [Service]
