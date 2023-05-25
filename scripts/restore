@@ -38,7 +38,7 @@ yunohost service add $app --description="Cross platform reading server" --log="/
 #=================================================
 ynh_script_progression --message="Reloading NGINX web server and $app's service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
 
 ynh_systemd_action --service_name=nginx --action=reload
 
