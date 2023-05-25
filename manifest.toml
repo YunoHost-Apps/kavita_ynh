@@ -50,23 +50,13 @@ ram.runtime = "50M"
     armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.2/kavita-linux-arm.tar.gz"
     armhf.sha256 = "3bf7aac85f51432c8cc0a46ea885bb0167b03e9c0209858a76b1785f884cf104"
 
-    [resources.ports]
-    
-[resources.sources]
-    [resources.sources.main]
-    in_subdir = true
-    amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.2/kavita-linux-x64.tar.gz"
-    amd64.sha256 = "d4bc73321e1241a1e6247fc0c5ff14504e73c5b3ce9c22a237fd6eae7fc51f33"
-    arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.2/kavita-linux-arm64.tar.gz"
-    arm64.sha256 = "634d8b1be654de18ac0238512b9e552e9ad2dd50e6113199907fce525f71f14c"
-    armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.2/kavita-linux-arm.tar.gz"
-    armhf.sha256 = "3bf7aac85f51432c8cc0a46ea885bb0167b03e9c0209858a76b1785f884cf104"
-
     #autoupdate.strategy = "latest_github_release"
     #autoupdate.asset.amd64 = ".*\.amd64.tar.gz"
     #autoupdate.asset.arm64 = ".*\.arm64.tar.gz"
     #autoupdate.asset.armhf = ".*\.arm.tar.gz"
     
+    [resources.ports]
+
     [resources.system_user]
 
     [resources.install_dir]
