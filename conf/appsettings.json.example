@@ -1,0 +1,6 @@
+{
+  "TokenKey": "super secret unguessable key",
+  "Port": __PORT__,
+  "IpAddresses": "",
+  "BaseUrl": "__URL_PATH__"
+}
