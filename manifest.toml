@@ -40,7 +40,7 @@ ram.runtime = "50M"
 
 [resources]
     [resources.port]
-    main.port = 5000
+    main.default = 5000
 
     [resources.sources]
         [resources.sources.main]
