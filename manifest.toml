@@ -39,9 +39,6 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-
-    [resources.ports]
-    
 [resources.sources]
     [resources.sources.main]
     in_subdir = true
@@ -56,6 +53,8 @@ ram.runtime = "50M"
     #autoupdate.asset.amd64 = ".*\.amd64.tar.gz"
     #autoupdate.asset.arm64 = ".*\.arm64.tar.gz"
     #autoupdate.asset.armhf = ".*\.arm.tar.gz"
+
+    [resources.port]
     
     [resources.system_user]
 
