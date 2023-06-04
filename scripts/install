@@ -39,6 +39,7 @@ yunohost service add $app --description="Cross platform reading server" --log="/
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
+key=$(ynh_string_random --length=24)
 url_path=${path#/}
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
