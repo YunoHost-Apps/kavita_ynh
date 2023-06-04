@@ -39,8 +39,6 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-    [resources.ports]
-    main.default = 5000
 
     [resources.sources]
         [resources.sources.main]
@@ -52,6 +50,9 @@ ram.runtime = "50M"
         armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.2/kavita-linux-arm.tar.gz"
         armhf.sha256 = "3bf7aac85f51432c8cc0a46ea885bb0167b03e9c0209858a76b1785f884cf104"
 
+    [resources.ports]
+    main.default = 5000
+
     [resources.system_user]
 
     [resources.install_dir]
@@ -59,13 +60,13 @@ ram.runtime = "50M"
     [resources.permissions]
     main.url = "/"
 
-    api.url = "/api/*"
+    api.url = "/api"
     api.show_tile = false
     api.protected= true
     api.allowed = ["visitors", "all_users"]
     api.auth_header = false
 
-    hubs.url = "/hubs/*"
+    hubs.url = "/hubs"
     hubs.show_tile = false
     hubs.protected= true
     hubs.auth_header = false
