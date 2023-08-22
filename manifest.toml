@@ -50,6 +50,9 @@ ram.runtime = "50M"
         armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.7/kavita-linux-arm.tar.gz"
         armhf.sha256 = "283fc142ea9b281c2242dfe7e54774ce273d8990b8f0418dd90ec5bcac85e624"
 
+        # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
+        autoupdate.strategy = "latest_github_release"
+
     [resources.ports]
     main.default = 5000
 
