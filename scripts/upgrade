@@ -53,8 +53,7 @@ then
 	ynh_app_setting_set --app="$app" --key=key --value="$key"
 fi
 
-url_path=${path#/}
-ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+url_path=$(ynh_app_setting_get --app="$app" --key=url_path)
 
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
