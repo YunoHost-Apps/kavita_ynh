@@ -54,6 +54,8 @@ then
 fi
 
 url_path=${path#/}
+ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 600 "$install_dir/config/appsettings.json"
