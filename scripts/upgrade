@@ -45,7 +45,7 @@ chmod +x "$install_dir"/Kavita
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-key=$(ynh_app_setting_get --app="$app" --key=storage_s3_bucket)
+key=$(ynh_app_setting_get --app="$app" --key=key)
 
 if [ -z "$key" ] || [ "$key" == "super secret unguessable key that is longer because we require it" ]
 then
