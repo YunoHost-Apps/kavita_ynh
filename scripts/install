@@ -18,8 +18,8 @@ ynh_script_progression --message="Setting up source files..." --weight=4
 ynh_setup_source --dest_dir="$install_dir"
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
-chmod +x $install_dir/Kavita
+chown -R "$app":www-data "$install_dir"
+chmod +x "$install_dir"/Kavita
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -32,19 +32,22 @@ ynh_add_nginx_config
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
-yunohost service add $app --description="Cross platform reading server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-key=$(ynh_string_random --length=24)
+key=$(ynh_string_random --length=70)
+ynh_app_setting_set --app="$app" --key=key --value="$key"
 url_path=${path#/}
+ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 600 "$install_dir/config/appsettings.json"
-chown $app:$app "$install_dir/config/appsettings.json"
+chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -52,7 +55,7 @@ chown $app:$app "$install_dir/config/appsettings.json"
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
