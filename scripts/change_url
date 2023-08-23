@@ -16,7 +16,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action=stop --log_path=systemd
+ynh_systemd_action --service_name="$app" --action=stop --log_path=systemd
 
 #=================================================
 # MODIFY URL IN NGINX CONF
@@ -32,13 +32,16 @@ ynh_change_url_nginx_config
 #=================================================
 ynh_backup_if_checksum_is_different --file="$install_dir/config/appsettings.json"
 
-domain=$new_domain
+key=$(ynh_app_setting_get --app="$app" --key=key)
+domain="$new_domain"
+ynh_app_setting_set --app="$app" --key=domain --value="$domain"
 url_path=${new_path#/}
+ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
 
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 400 "$install_dir/config/appsettings.json"
-chown $app:$app "$install_dir/config/appsettings.json"
+chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
 # GENERIC FINALISATION
@@ -48,7 +51,7 @@ chown $app:$app "$install_dir/config/appsettings.json"
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd
+ynh_systemd_action --service_name="$app" --action=start --log_path=systemd
 
 #=================================================
 # END OF SCRIPT

@@ -22,7 +22,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+ynh_systemd_action --service_name="$app" --action="stop" --log_path="systemd"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -33,24 +33,37 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="config"
+	ynh_setup_source --dest_dir="$install_dir" --keep="config/appsettings.json"
 fi
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
-chmod +x $install_dir/Kavita
+chown -R "$app":www-data "$install_dir"
+chmod +x "$install_dir"/Kavita
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
 ynh_script_progression --message="Modifying a config file..." --weight=1
 
-key=$(ynh_string_random --length=24)
-url_path=${path#/}
+key=$(ynh_app_setting_get --app="$app" --key=key)
+
+if [ -z "$key" ] || [ "$key" == "super secret unguessable key that is longer because we require it" ]
+then
+	key=$(ynh_string_random --length=70)
+	ynh_app_setting_set --app="$app" --key=key --value="$key"
+fi
+
+url_path=$(ynh_app_setting_get --app="$app" --key=url_path)
+
+if [ -z "$url_path" ]; then
+	url_path=${path#/}
+	ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+fi
+
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 600 "$install_dir/config/appsettings.json"
-chown $app:$app "$install_dir/config/appsettings.json"
+chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
@@ -66,14 +79,14 @@ ynh_add_systemd_config
 # Use logrotate to manage app-specific logfile(s)
 ynh_use_logrotate --non-append
 
-yunohost service add $app --description="Cross platform reading server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
