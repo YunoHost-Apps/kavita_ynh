@@ -52,6 +52,9 @@ ram.runtime = "50M"
 
         # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
         autoupdate.strategy = "latest_github_release"
+        autoupdate.asset.amd64 = "kavita-linux-x64.tar.gz"
+        autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
+        autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
 
     [resources.ports]
     main.default = 5000
