@@ -22,6 +22,24 @@ chmod -R o-rwx "$install_dir"
 chown -R "$app":www-data "$install_dir"
 
 #=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+# compare is the system arch is different from the binary arch
+# if so, download the correct binary
+if [ "$(uname -m)" != "$(file "$final_path"/Kavita | cut -d ',' -f 2 | tr -d ' ')" ]
+then
+	ynh_script_progression --message="Migrating binary architecture..." --weight=1
+
+	# Download, check integrity, uncompress and patch the source from app.src
+	ynh_setup_source --dest_dir="$install_dir" --keep="config/appsettings.json"
+fi
+
+chmod -R o-rwx "$install_dir"
+chown -R "$app":www-data "$install_dir"
+chmod +x "$install_dir"/Kavita
+
+#=================================================
 # RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Restoring system configurations related to $app..." --weight=1
