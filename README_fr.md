@@ -16,20 +16,19 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Kavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.
+Kavita est un serveur de lecture multiplateforme rapide et riche en fonctionnalités. Conçu en mettant l'accent sur les mangas et dans le but d'être une solution complète pour tous vos besoins de lecture. Configurez votre propre serveur et partagez votre collection de lectures avec vos amis et votre famille.
 
-### Features
+### Caractéristiques
 
-- Extensive File support
-- Manga/Comic Reader
-- Book Reader
-- User Management and Sharing
-- Cross Platform with no dependencies - Everything in the box
-- Full-text search to quickly find what you want to read
-- Mixed media Libraries - Light Novels and Manga can be right next to each other
-- Fast and efficient library scans. Don't perform I/O if the underlying file hasn't changed.
-- OPDS-PS Support
-
+- Prise en charge étendue des fichiers
+- Lecteur de mangas/bandes dessinées
+- Lecteur de livres
+- Gestion et partage des utilisateurs
+- Multiplateforme sans dépendances - Tout est dans la boîte
+- Recherche en texte intégral pour trouver rapidement ce que vous voulez lire
+- Bibliothèques multimédias - Les Light Novels et les Mangas peuvent être côte à côte
+- Analyses de bibliothèque rapides et efficaces. N'effectuez pas d'E/S si le fichier sous-jacent n'a pas changé.
+- Prise en charge OPDS-PS
 
 **Version incluse :** 0.7.8~ynh1
 
