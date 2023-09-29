@@ -26,7 +26,7 @@ chown -R "$app":www-data "$install_dir"
 
 # compare if the system arch is different from the binary arch
 # if so, download the correct binary
-if [ "$(uname -m)" != "$(file "$final_path"/Kavita | cut -d ',' -f 2 | tr -d ' ')" ]
+if [ "$(uname -m)" != "$(file "$install_dir"/Kavita | cut -d ',' -f 2 | tr -d ' ')" ]
 then
 	ynh_script_progression --message="Migrating binary architecture..." --weight=1
 
