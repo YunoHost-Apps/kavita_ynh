@@ -44,7 +44,6 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 * Official app website: <www.kavitareader.com>
 * Official admin documentation: <https://wiki.kavitareader.com/en>
 * Upstream app code repository: <https://github.com/Kareadita/Kavita>
-* YunoHost documentation for this app: <https://yunohost.org/app_kavita>
 * Report a bug: <https://github.com/YunoHost-Apps/kavita_ynh/issues>
 
 ## Developer info
