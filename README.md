@@ -31,7 +31,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - OPDS-PS Support
 
 
-**Shipped version:** 0.7.9~ynh1
+**Shipped version:** 0.7.10.1~ynh1
 
 **Demo:** https://demo.kavitareader.com/
 
@@ -44,6 +44,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 * Official app website: <www.kavitareader.com>
 * Official admin documentation: <https://wiki.kavitareader.com/en>
 * Upstream app code repository: <https://github.com/Kareadita/Kavita>
+* YunoHost Store: <https://apps.yunohost.org/app/kavita>
 * Report a bug: <https://github.com/YunoHost-Apps/kavita_ynh/issues>
 
 ## Developer info
