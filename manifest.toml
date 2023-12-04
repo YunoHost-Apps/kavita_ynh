@@ -5,7 +5,7 @@ name = "Kavita"
 description.en = "Media server for your comics, manga and books"
 description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et livres"
 
-version = "0.7.10.2~ynh1"
+version = "0.7.11~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -43,12 +43,12 @@ ram.runtime = "50M"
     [resources.sources]
         [resources.sources.main]
         in_subdir = true
-        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.10.2/kavita-linux-x64.tar.gz"
-        amd64.sha256 = "63ab651b6b45080729174f5f7ac28295a1f1b2de83835ff169fb2b41d5cd93e9"
-        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.10.2/kavita-linux-arm64.tar.gz"
-        arm64.sha256 = "121a2a206b06baa390266c73e1e9e3353f326b47b9839c8dea1b3775de75d47d"
-        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.10.2/kavita-linux-arm.tar.gz"
-        armhf.sha256 = "091cf2dfa0058cce8a8e30873b994869672dd703663aa051e51b6a150541d03d"
+        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.11/kavita-linux-x64.tar.gz"
+        amd64.sha256 = "9260335faf528c19329284b7d6e8e51c7eeec6e67a2a8cc098763c360c07f05d"
+        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.11/kavita-linux-arm64.tar.gz"
+        arm64.sha256 = "7d12702c25eabd098578bfa6d834a4133886ef3953e6db8318a291eb4a288668"
+        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.11/kavita-linux-arm.tar.gz"
+        armhf.sha256 = "8b5761d1891c1d770a75ca62e2f231aea9df395c047d8f9c921cc123551314f2"
 
         # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
         autoupdate.strategy = "latest_github_release"
