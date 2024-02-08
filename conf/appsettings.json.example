@@ -2,6 +2,6 @@
   "TokenKey": "__KEY__",
   "Port": __PORT__,
   "IpAddresses": "127.0.0.1",
-  "BaseUrl": "__PATH__",
+  "BaseUrl": "__URL_PATH__",
   "Cache": 50
 }
