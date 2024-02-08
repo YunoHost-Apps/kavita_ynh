@@ -33,10 +33,6 @@ ynh_change_url_nginx_config
 ynh_backup_if_checksum_is_different --file="$install_dir/config/appsettings.json"
 
 key=$(ynh_app_setting_get --app="$app" --key=key)
-domain="$new_domain"
-ynh_app_setting_set --app="$app" --key=domain --value="$domain"
-url_path=${new_path#/}
-ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
 
 ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 

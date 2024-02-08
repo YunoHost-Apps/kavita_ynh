@@ -41,8 +41,6 @@ ynh_script_progression --message="Modifying a config file..." --weight=1
 
 key=$(ynh_string_random --length=70)
 ynh_app_setting_set --app="$app" --key=key --value="$key"
-url_path=${path#/}
-ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
 
 ynh_add_config --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
