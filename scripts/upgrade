@@ -57,6 +57,7 @@ url_path=$(ynh_app_setting_get --app="$app" --key=url_path)
 
 if [ -z "$url_path" ]; then
 	url_path=${path#/}
+	if [ "$url_path" == "" ]; then url_path="/"; fi
 	ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
 fi
 
