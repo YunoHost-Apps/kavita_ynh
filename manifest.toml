@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "kavita"
@@ -7,7 +9,7 @@ description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et livr
 
 version = "0.7.14~ynh1"
 
-maintainers = ["eric_G"]
+maintainers = [ "eric_G" ]
 
 [upstream]
 license = "MIT"
@@ -18,7 +20,7 @@ code = "https://github.com/Kareadita/Kavita"
 
 [integration]
 yunohost = ">= 11.2"
-architectures = ["amd64", "arm64", "armhf"]
+architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 
 ldap = false
@@ -59,27 +61,27 @@ ram.runtime = "50M"
         autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
         autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
 
-    [resources.ports]
-    main.default = 5000
+[resources.ports]
+main.default = 5000
 
-    [resources.system_user]
+[resources.system_user]
 
-    [resources.install_dir]
+[resources.install_dir]
 
-    [resources.permissions]
-    main.url = "/"
+[resources.permissions]
+main.url = "/"
 
-    api.url = "/api"
-    api.show_tile = false
-    api.protected= true
-    api.allowed = ["visitors", "all_users"]
-    api.auth_header = false
+api.url = "/api"
+api.show_tile = false
+api.protected = true
+api.allowed = [ "visitors", "all_users" ]
+api.auth_header = false
 
-    hubs.url = "/hubs"
-    hubs.show_tile = false
-    hubs.protected= true
-    hubs.auth_header = false
-    hubs.allowed = ["visitors", "all_users"]
+hubs.url = "/hubs"
+hubs.show_tile = false
+hubs.protected = true
+hubs.auth_header = false
+hubs.allowed = [ "visitors", "all_users" ]
 
-    [resources.apt]
-    packages = "sqlite3"
+[resources.apt]
+packages = "sqlite3"
