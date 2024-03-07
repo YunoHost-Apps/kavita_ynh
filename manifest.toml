@@ -13,7 +13,7 @@ maintainers = [ "eric_G" ]
 
 [upstream]
 license = "MIT"
-website = "www.kavitareader.com"
+website = "https://www.kavitareader.com/"
 demo = "https://demo.kavitareader.com/"
 admindoc = "https://wiki.kavitareader.com/en"
 code = "https://github.com/Kareadita/Kavita"
