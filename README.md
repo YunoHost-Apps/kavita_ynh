@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Kavita with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=kavita)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Kavita quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -31,7 +31,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - OPDS-PS Support
 
 
-**Shipped version:** 0.7.14~ynh1
+**Shipped version:** 0.8.0~ynh1
 
 **Demo:** <https://demo.kavitareader.com/>
 
@@ -45,7 +45,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 
 ## Documentation and resources
 
-- Official app website: <www.kavitareader.com>
+- Official app website: <https://www.kavitareader.com/>
 - Official admin documentation: <https://wiki.kavitareader.com/en>
 - Upstream app code repository: <https://github.com/Kareadita/Kavita>
 - YunoHost Store: <https://apps.yunohost.org/app/kavita>

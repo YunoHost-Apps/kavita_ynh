@@ -33,7 +33,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="config/appsettings.json"
+	ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="config"
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -76,6 +76,9 @@ ynh_add_nginx_config
 
 # Create a dedicated systemd config
 ynh_add_systemd_config
+
+mkdir -p "/var/log/$app"
+chmod 640 "/var/log/$app"
 
 # Use logrotate to manage app-specific logfile(s)
 ynh_use_logrotate --non-append

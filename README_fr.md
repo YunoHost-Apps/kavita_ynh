@@ -30,7 +30,7 @@ Kavita est un serveur de lecture multiplateforme rapide et riche en fonctionnali
 - Analyses de bibliothèque rapides et efficaces. N'effectuez pas d'E/S si le fichier sous-jacent n'a pas changé.
 - Prise en charge OPDS-PS
 
-**Version incluse :** 0.7.14~ynh1
+**Version incluse :** 0.8.0~ynh1
 
 **Démo :** <https://demo.kavitareader.com/>
 
@@ -40,11 +40,11 @@ Kavita est un serveur de lecture multiplateforme rapide et riche en fonctionnali
 
 ## :red_circle: Anti-fonctionnalités
 
-- **Contenu payant**: Promeut ou dépend, entièrement ou partiellement, d'un service payant.
+- **Contenu payant **: Promeut ou dépend, entièrement ou partiellement, d'un service payant.
 
 ## Documentations et ressources
 
-- Site officiel de l’app : <www.kavitareader.com>
+- Site officiel de l’app : <https://www.kavitareader.com/>
 - Documentation officielle de l’admin : <https://wiki.kavitareader.com/en>
 - Dépôt de code officiel de l’app : <https://github.com/Kareadita/Kavita>
 - YunoHost Store : <https://apps.yunohost.org/app/kavita>

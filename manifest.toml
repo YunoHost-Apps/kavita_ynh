@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "kavita"
@@ -5,20 +7,20 @@ name = "Kavita"
 description.en = "Media server for your comics, manga and books"
 description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et livres"
 
-version = "0.7.14~ynh1"
+version = "0.8.0~ynh1"
 
-maintainers = ["eric_G"]
+maintainers = [ "eric_G" ]
 
 [upstream]
 license = "MIT"
-website = "www.kavitareader.com"
+website = "https://www.kavitareader.com/"
 demo = "https://demo.kavitareader.com/"
 admindoc = "https://wiki.kavitareader.com/en"
 code = "https://github.com/Kareadita/Kavita"
 
 [integration]
 yunohost = ">= 11.2"
-architectures = ["amd64", "arm64", "armhf"]
+architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 
 ldap = false
@@ -46,12 +48,12 @@ ram.runtime = "50M"
     [resources.sources]
         [resources.sources.main]
         in_subdir = true
-        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.14/kavita-linux-x64.tar.gz"
-        amd64.sha256 = "385e75ce4e6faae5a09b50ac0c3ebda6a5374d51c249dfcf045e1e44bb49b22b"
-        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.14/kavita-linux-arm64.tar.gz"
-        arm64.sha256 = "d0514a54537f18b3cfdc385f06796806e77a69f91825ec914cd50809a423a902"
-        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.7.14/kavita-linux-arm.tar.gz"
-        armhf.sha256 = "e8201324ee8cd6ad6f65d1437cc95ef194fd9518b794465c93c36e2e05b016f4"
+        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.0/kavita-linux-x64.tar.gz"
+        amd64.sha256 = "84702cce150403fb4830e29e13097b395887b58cc487bf0701388b306a22c647"
+        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.0/kavita-linux-arm64.tar.gz"
+        arm64.sha256 = "6c4d87af649dc79b8004b687f5ceb78a4c09efb7f9ef2b80a4e243cb55b0b9bc"
+        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.0/kavita-linux-arm.tar.gz"
+        armhf.sha256 = "c7d8ac8c59bb1551a434a545db02771bc5eda301344e03f801bea78e9e22b43e"
 
         # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
         autoupdate.strategy = "latest_github_release"
@@ -59,27 +61,27 @@ ram.runtime = "50M"
         autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
         autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
 
-    [resources.ports]
-    main.default = 5000
+[resources.ports]
+main.default = 5000
 
-    [resources.system_user]
+[resources.system_user]
 
-    [resources.install_dir]
+[resources.install_dir]
 
-    [resources.permissions]
-    main.url = "/"
+[resources.permissions]
+main.url = "/"
 
-    api.url = "/api"
-    api.show_tile = false
-    api.protected= true
-    api.allowed = ["visitors", "all_users"]
-    api.auth_header = false
+api.url = "/api"
+api.show_tile = false
+api.protected = true
+api.allowed = [ "visitors", "all_users" ]
+api.auth_header = false
 
-    hubs.url = "/hubs"
-    hubs.show_tile = false
-    hubs.protected= true
-    hubs.auth_header = false
-    hubs.allowed = ["visitors", "all_users"]
+hubs.url = "/hubs"
+hubs.show_tile = false
+hubs.protected = true
+hubs.auth_header = false
+hubs.allowed = [ "visitors", "all_users" ]
 
-    [resources.apt]
-    packages = "sqlite3"
+[resources.apt]
+packages = "sqlite3"
