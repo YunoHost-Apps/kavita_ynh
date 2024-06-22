@@ -39,7 +39,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 
 ![Captura de pantalla de Kavita](./doc/screenshots/screenshot.png)
 
-## :red_circle: Caraterísticas cuestionables
+## :red_circle: Debes considerar
 
 - **Paid content**: Promotes or depends, entirely or partially, on a paid service.
 

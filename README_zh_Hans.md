@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Kavita
+# YunoHost 上的 Kavita
 
 [![集成程度](https://dash.yunohost.org/integration/kavita.svg)](https://dash.yunohost.org/appci/app/kavita) ![工作状态](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)
 
