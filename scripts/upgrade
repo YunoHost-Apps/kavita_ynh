@@ -90,7 +90,7 @@ yunohost service add "$app" --description="Cross platform reading server" --log=
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd" --line_match="Now listening on:"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd" --line_match="API.Program Kavita"
 
 #=================================================
 # END OF SCRIPT
