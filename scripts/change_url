@@ -33,15 +33,11 @@ ynh_app_setting_set --key=url_path --value="$url_path"
 
 ynh_config_add --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config/appsettings.json"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown "$app":"$app" "$install_dir/config/appsettings.json"
-
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
 ynh_systemctl --service="$app" --action=start --log_path=systemd --wait_until="Now listening on:"
 
 #=================================================
