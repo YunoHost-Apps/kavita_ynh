@@ -7,7 +7,7 @@ name = "Kavita"
 description.en = "Media server for your comics, manga and books"
 description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et livres"
 
-version = "0.8.3.2~ynh1"
+version = "0.8.3.2~ynh2"
 
 maintainers = [ "eric_G" ]
 
