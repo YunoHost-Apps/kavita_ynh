@@ -5,7 +5,9 @@ No se debe editar a mano.
 
 # Kavita para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/kavita.svg)](https://ci-apps.yunohost.org/ci/apps/kavita/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/kavita)](https://ci-apps.yunohost.org/ci/apps/kavita/)
+![Estado funcional](https://apps.yunohost.org/badge/state/kavita)
+![Estado En Mantención](https://apps.yunohost.org/badge/maintained/kavita)
 
 [![Instalar Kavita con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=kavita)
 
@@ -31,7 +33,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - OPDS-PS Support
 
 
-**Versión actual:** 0.8.2~ynh1
+**Versión actual:** 0.8.4~ynh1
 
 **Demo:** <https://demo.kavitareader.com/>
 
@@ -53,7 +55,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/kavita_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/kavita_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
