@@ -41,7 +41,7 @@ ynh_app_setting_set --key=url_path --value="$url_path"
 
 ynh_config_add --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
-600 "$install_dir/config/appsettings.json"
+chmod 600 "$install_dir/config/appsettings.json"
 chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
@@ -49,7 +49,7 @@ chown "$app":"$app" "$install_dir/config/appsettings.json"
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd" --wait_until="Now listening on:"
+ynh_systemctl --service="$app" --action="start" --log_path="systemd" --wait_until="API.Program Kavita"
 
 #=================================================
 # END OF SCRIPT
