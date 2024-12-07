@@ -23,7 +23,7 @@ then
 	ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
 fi
 
-chmod +x "$install_dir"/Kavita
+chmod +x "$install_dir/Kavita"
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
