@@ -18,8 +18,6 @@ ynh_script_progression "Updating NGINX web server configuration..."
 ynh_config_change_url_nginx
 
 #=================================================
-# SPECIFIC MODIFICATIONS
-#=================================================
 # CONFIGURE Kavita
 #=================================================
 ynh_backup_if_checksum_is_different "$install_dir/config/appsettings.json"
