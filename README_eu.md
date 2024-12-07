@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Kavita YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/kavita.svg)](https://ci-apps.yunohost.org/ci/apps/kavita/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/kavita)](https://ci-apps.yunohost.org/ci/apps/kavita/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/kavita)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/kavita)
 
 [![Instalatu Kavita YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=kavita)
 
@@ -31,7 +33,7 @@ Kavita is a fast, feature rich, cross platform reading server. Built with a focu
 - OPDS-PS Support
 
 
-**Paketatutako bertsioa:** 0.8.3.2~ynh2
+**Paketatutako bertsioa:** 0.8.4.2~ynh1
 
 **Demoa:** <https://demo.kavitareader.com/>
 

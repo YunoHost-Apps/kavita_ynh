@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # Kavita pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/kavita.svg)](https://ci-apps.yunohost.org/ci/apps/kavita/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/kavita.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/kavita.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/kavita)](https://ci-apps.yunohost.org/ci/apps/kavita/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/kavita)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/kavita)
 
 [![Installer Kavita avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=kavita)
 
@@ -30,7 +32,7 @@ Kavita est un serveur de lecture multiplateforme rapide et riche en fonctionnali
 - Analyses de bibliothèque rapides et efficaces. N'effectuez pas d'E/S si le fichier sous-jacent n'a pas changé.
 - Prise en charge OPDS-PS
 
-**Version incluse :** 0.8.3.2~ynh2
+**Version incluse :** 0.8.4.2~ynh1
 
 **Démo :** <https://demo.kavitareader.com/>
 
