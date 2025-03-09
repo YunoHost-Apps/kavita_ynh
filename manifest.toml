@@ -46,42 +46,43 @@ ram.runtime = "50M"
 [resources]
 
     [resources.sources]
-        [resources.sources.main]
-        in_subdir = true
-        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-x64.tar.gz"
-        amd64.sha256 = "5e196f2117f3668c3bfd5069b2775d2799cfa4f9cc62530c67464ef844f86119"
-        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-arm64.tar.gz"
-        arm64.sha256 = "8c207a9b4f5fd70b6cb10f656d0c8b6edc8a80eba702f4fbbb00c9a0dbbf7c08"
-        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-arm.tar.gz"
-        armhf.sha256 = "50b93a206883182a7052c08ea010d580673f155a7eab8856c8f4b9e9335160ce"
 
-        # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
-        autoupdate.strategy = "latest_github_release"
-        autoupdate.asset.amd64 = "kavita-linux-x64.tar.gz"
-        autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
-        autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
+    [resources.sources.main]
+    in_subdir = true
+    amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-x64.tar.gz"
+    amd64.sha256 = "5e196f2117f3668c3bfd5069b2775d2799cfa4f9cc62530c67464ef844f86119"
+    arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-arm64.tar.gz"
+    arm64.sha256 = "8c207a9b4f5fd70b6cb10f656d0c8b6edc8a80eba702f4fbbb00c9a0dbbf7c08"
+    armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.5/kavita-linux-arm.tar.gz"
+    armhf.sha256 = "50b93a206883182a7052c08ea010d580673f155a7eab8856c8f4b9e9335160ce"
 
-[resources.ports]
-main.default = 5000
+    # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "kavita-linux-x64.tar.gz"
+    autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
+    autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
 
-[resources.system_user]
+    [resources.system_user]
 
-[resources.install_dir]
+    [resources.install_dir]
 
-[resources.permissions]
-main.url = "/"
+    [resources.permissions]
+    main.url = "/"
 
-api.url = "/api"
-api.show_tile = false
-api.protected = true
-api.allowed = [ "visitors", "all_users" ]
-api.auth_header = false
+    api.url = "/api"
+    api.show_tile = false
+    api.protected = true
+    api.allowed = [ "visitors", "all_users" ]
+    api.auth_header = false
 
-hubs.url = "/hubs"
-hubs.show_tile = false
-hubs.protected = true
-hubs.auth_header = false
-hubs.allowed = [ "visitors", "all_users" ]
+    hubs.url = "/hubs"
+    hubs.show_tile = false
+    hubs.protected = true
+    hubs.auth_header = false
+    hubs.allowed = [ "visitors", "all_users" ]
 
-[resources.apt]
-packages = "sqlite3"
+    [resources.ports]
+    main.default = 5000
+
+    [resources.apt]
+    packages = "sqlite3"
