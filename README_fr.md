@@ -32,7 +32,7 @@ Kavita est un serveur de lecture multiplateforme rapide et riche en fonctionnali
 - Analyses de bibliothèque rapides et efficaces. N'effectuez pas d'E/S si le fichier sous-jacent n'a pas changé.
 - Prise en charge OPDS-PS
 
-**Version incluse :** 0.8.5.3~ynh1
+**Version incluse :** 0.8.5.11~ynh1
 
 **Démo :** <https://demo.kavitareader.com/>
 
