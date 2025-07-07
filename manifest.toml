@@ -7,7 +7,7 @@ name = "Kavita"
 description.en = "Media server for your comics, manga and books"
 description.fr = "Serveur multimédia pour vos bandes dessinées, mangas et livres"
 
-version = "0.8.4.2~ynh1"
+version = "0.8.7~ynh1"
 
 maintainers = [ ]
 
@@ -47,42 +47,43 @@ ram.runtime = "50M"
 [resources]
 
     [resources.sources]
-        [resources.sources.main]
-        in_subdir = true
-        amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.4.2/kavita-linux-x64.tar.gz"
-        amd64.sha256 = "075b86bc8d95876f1f89a0ebc5241d5f13165b96f191b44e414a818aa32be819"
-        arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.4.2/kavita-linux-arm64.tar.gz"
-        arm64.sha256 = "34f15d4c1e1470d5439dd6dd0f4263f4e7b7ae65cceee4dbf49bdc5e8f2cdd03"
-        armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.4.2/kavita-linux-arm.tar.gz"
-        armhf.sha256 = "66e3b87d73eb75209a087e2e7773a55c6d3bd04a77511e6d382ec754956732b1"
 
-        # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
-        autoupdate.strategy = "latest_github_release"
-        autoupdate.asset.amd64 = "kavita-linux-x64.tar.gz"
-        autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
-        autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
+    [resources.sources.main]
+    in_subdir = true
+    amd64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.7/kavita-linux-x64.tar.gz"
+    amd64.sha256 = "88ea7862ae732a80e562139d3fa5e404f52b3762af8ec5ae2e83266e251f63e4"
+    arm64.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.7/kavita-linux-arm64.tar.gz"
+    arm64.sha256 = "e54108d9a39258d1bed77e4abeff5419d04f146a15c2c0d862e8354eb5634276"
+    armhf.url = "https://github.com/Kareadita/Kavita/releases/download/v0.8.7/kavita-linux-arm.tar.gz"
+    armhf.sha256 = "dd2f556ccc17d9d241871f451964a19169871d6a58f1f3de2af8627c8b022ed8"
 
-[resources.ports]
-main.default = 5000
+    # https://yunohost.org/fr/packaging_apps_resources#regarding-autoupdate
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "kavita-linux-x64.tar.gz"
+    autoupdate.asset.arm64 = "kavita-linux-arm64.tar.gz"
+    autoupdate.asset.armhf = "kavita-linux-arm.tar.gz"
 
-[resources.system_user]
+    [resources.system_user]
 
-[resources.install_dir]
+    [resources.install_dir]
 
-[resources.permissions]
-main.url = "/"
+    [resources.permissions]
+    main.url = "/"
 
-api.url = "/api"
-api.show_tile = false
-api.protected = true
-api.allowed = [ "visitors", "all_users" ]
-api.auth_header = false
+    api.url = "/api"
+    api.show_tile = false
+    api.protected = true
+    api.allowed = [ "visitors", "all_users" ]
+    api.auth_header = false
 
-hubs.url = "/hubs"
-hubs.show_tile = false
-hubs.protected = true
-hubs.auth_header = false
-hubs.allowed = [ "visitors", "all_users" ]
+    hubs.url = "/hubs"
+    hubs.show_tile = false
+    hubs.protected = true
+    hubs.auth_header = false
+    hubs.allowed = [ "visitors", "all_users" ]
 
-[resources.apt]
-packages = "sqlite3"
+    [resources.ports]
+    main.default = 5000
+
+    [resources.apt]
+    packages = "sqlite3"
