@@ -4,6 +4,13 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
+# INITIALIZE AND STORE SETTINGS
+#=================================================
+
+key=$(ynh_string_random --length=70)
+ynh_app_setting_set --key=key --value="$key"
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -21,9 +28,6 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-mkdir -p "/var/log/$app"
-chmod 640 "/var/log/$app"
-
 ynh_config_add_logrotate
 
 yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
@@ -33,8 +37,6 @@ yunohost service add "$app" --description="Cross platform reading server" --log=
 #=================================================
 ynh_script_progression "Updating configuration..."
 
-key=$(ynh_string_random --length=70)
-ynh_app_setting_set --key=key --value="$key"
 url_path=${path#/}
 if [ "$url_path" == "" ]; then url_path="/"; fi
 ynh_app_setting_set --key=url_path --value="$url_path"
@@ -42,7 +44,6 @@ ynh_app_setting_set --key=url_path --value="$url_path"
 ynh_config_add --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 600 "$install_dir/config/appsettings.json"
-chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
 # START SYSTEMD SERVICE

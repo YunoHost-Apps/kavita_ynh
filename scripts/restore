@@ -11,21 +11,6 @@ ynh_script_progression "Restoring the app main directory..."
 ynh_restore "$install_dir"
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-
-# compare if the system arch is different from the binary arch
-# if so, download the correct binary
-if [ "$(uname -m)" != "$(file "$install_dir"/Kavita | cut -d ',' -f 2 | tr -d ' ')" ]
-then
-	ynh_script_progression "Migrating binary architecture..."
-
-	ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
-fi
-
-chmod +x "$install_dir/Kavita"
-
-#=================================================
 # RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
@@ -34,9 +19,6 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app".service --quiet
-
-mkdir -p "/var/log/$app"
-chmod 640 "/var/log/$app"
 
 ynh_config_add_logrotate
 
@@ -47,7 +29,7 @@ yunohost service add "$app" --description="Cross platform reading server" --log=
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd" --wait_until="API.Program Kavita"
+ynh_systemctl --service="$app" --action="start" --log_path="systemd"
 
 ynh_systemctl --service=nginx --action=reload
 
