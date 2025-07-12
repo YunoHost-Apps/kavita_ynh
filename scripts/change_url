@@ -1,60 +1,44 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC STARTING
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD MODIFICATIONS
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
+ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemd_action --service_name="$app" --action=stop --log_path=systemd
+ynh_systemctl --service="$app" --action=stop --log_path=systemd
 
 #=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
-ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
+ynh_script_progression "Updating NGINX web server configuration..."
 
-ynh_change_url_nginx_config
+ynh_config_change_url_nginx
 
-#=================================================
-# SPECIFIC MODIFICATIONS
 #=================================================
 # CONFIGURE Kavita
 #=================================================
-ynh_backup_if_checksum_is_different --file="$install_dir/config/appsettings.json"
+ynh_backup_if_checksum_is_different "$install_dir/config/appsettings.json"
 
-key=$(ynh_app_setting_get --app="$app" --key=key)
+key=$(ynh_app_setting_get --key=key)
 domain="$new_domain"
-ynh_app_setting_set --app="$app" --key=domain --value="$domain"
+ynh_app_setting_set --key=domain --value="$domain"
 url_path=${new_path#/}
 if [ "$url_path" == "" ]; then url_path="/"; fi
-ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+ynh_app_setting_set --key=url_path --value="$url_path"
 
-ynh_add_config --template="../conf/appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+ynh_config_add --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
-chmod 400 "$install_dir/config/appsettings.json"
-chown "$app":"$app" "$install_dir/config/appsettings.json"
-
-#=================================================
-# GENERIC FINALISATION
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
-ynh_systemd_action --service_name="$app" --action=start --log_path=systemd --line_match="API.Program Kavita"
+ynh_systemctl --service="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
-ynh_script_progression --message="Change of URL completed for $app" --last
+ynh_script_progression "Change of URL completed for $app"
