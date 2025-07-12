@@ -1,99 +1,74 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# CHECK VERSION
-#=================================================
-
-upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
+ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemd_action --service_name="$app" --action="stop" --log_path="systemd"
+ynh_systemctl --service="$app" --action="stop" --log_path="systemd"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression "Upgrading source files..."
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Upgrading source files..." --weight=1
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
 
-	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="config"
-fi
-
-chmod -R o-rwx "$install_dir"
-chown -R "$app":www-data "$install_dir"
-chmod +x "$install_dir"/Kavita
+chmod +x "$install_dir/Kavita"
 
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Modifying a config file..." --weight=1
+ynh_script_progression "Updating configuration..."
 
-key=$(ynh_app_setting_get --app="$app" --key=key)
+key=$(ynh_app_setting_get --key=key)
 
 if [ -z "$key" ] || [ "$key" == "super secret unguessable key that is longer because we require it" ]
 then
 	key=$(ynh_string_random --length=70)
-	ynh_app_setting_set --app="$app" --key=key --value="$key"
+	ynh_app_setting_set --key=key --value="$key"
 fi
 
-url_path=$(ynh_app_setting_get --app="$app" --key=url_path)
+url_path=$(ynh_app_setting_get --key=url_path)
 
 if [ -z "$url_path" ]; then
 	url_path=${path#/}
 	if [ "$url_path" == "" ]; then url_path="/"; fi
-	ynh_app_setting_set --app="$app" --key=url_path --value="$url_path"
+	ynh_app_setting_set --key=url_path --value="$url_path"
 fi
 
-ynh_add_config --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
+ynh_config_add --template="appsettings.json.example" --destination="$install_dir/config/appsettings.json"
 
 chmod 600 "$install_dir/config/appsettings.json"
-chown "$app":"$app" "$install_dir/config/appsettings.json"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+ynh_script_progression "Upgrading system configurations related to $app..."
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-# Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 mkdir -p "/var/log/$app"
 chmod 640 "/var/log/$app"
 
-# Use logrotate to manage app-specific logfile(s)
-ynh_use_logrotate --non-append
+ynh_config_add_logrotate
 
 yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd" --line_match="API.Program Kavita"
+ynh_systemctl --service="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
