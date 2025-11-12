@@ -57,7 +57,7 @@ chmod 640 "/var/log/$app"
 
 ynh_config_add_logrotate
 
-yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Media server for your comics, manga and books" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
