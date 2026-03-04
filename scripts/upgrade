@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -15,7 +14,7 @@ ynh_systemctl --service="$app" --action="stop" --log_path="systemd"
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
+ynh_hide_warnings ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
 
 chmod +x "$install_dir/Kavita"
 
@@ -58,7 +57,7 @@ chmod 640 "/var/log/$app"
 
 ynh_config_add_logrotate
 
-yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Media server for your comics, manga and books" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE

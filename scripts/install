@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -15,7 +14,7 @@ ynh_app_setting_set --key=key --value="$key"
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir="$install_dir"
+ynh_hide_warnings ynh_setup_source --dest_dir="$install_dir"
 
 chmod +x "$install_dir"/Kavita
 
@@ -30,7 +29,7 @@ ynh_config_add_systemd
 
 ynh_config_add_logrotate
 
-yunohost service add "$app" --description="Cross platform reading server" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Media server for your comics, manga and books" --log="/var/log/$app/$app.log"
 
 #=================================================
 # MODIFY A CONFIG FILE
