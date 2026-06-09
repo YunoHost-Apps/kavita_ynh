@@ -14,7 +14,7 @@ ynh_app_setting_set --key=key --value="$key"
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_hide_warnings ynh_setup_source --dest_dir="$install_dir"
+ynh_hide_warnings ynh_setup_source_kavita --dest_dir="$install_dir"
 
 chmod +x "$install_dir"/Kavita
 
