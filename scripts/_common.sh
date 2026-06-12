@@ -102,7 +102,7 @@ ynh_setup_source_kavita() {
 
     # Keep files to be backup/restored at the end of the helper
     # Assuming $dest_dir already exists
-    rm -rf /var/cache/yunohost/files_to_keep_during_setup_source/
+    ynh_safe_rm /var/cache/yunohost/files_to_keep_during_setup_source/
     if [ -n "$keep" ] && [ -e "$dest_dir" ]; then
         local keep_dir=/var/cache/yunohost/files_to_keep_during_setup_source/${YNH_APP_ID}
         mkdir -p "$keep_dir"
@@ -217,7 +217,7 @@ ynh_setup_source_kavita() {
             fi
         done
     fi
-    rm -rf /var/cache/yunohost/files_to_keep_during_setup_source/
+    ynh_safe_rm /var/cache/yunohost/files_to_keep_during_setup_source/
 
     if [ -n "${install_dir:-}" ] && [ "$dest_dir" == "$install_dir" ]; then
         _ynh_apply_default_permissions "$dest_dir"
