@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -14,7 +15,7 @@ ynh_systemctl --service="$app" --action="stop" --log_path="systemd"
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_hide_warnings ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config"
+ynh_hide_warnings ynh_setup_source_kavita --dest_dir="$install_dir" --full_replace --keep="config"
 
 chmod +x "$install_dir/Kavita"
 
