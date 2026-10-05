@@ -19,16 +19,16 @@ ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable "$app".service --quiet
 
-ynh_config_add_logrotate
-
 yunohost service add "$app" --description="Media server for your comics, manga and books" --log="/var/log/$app/$app.log"
+
+ynh_config_add_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="systemd"
+ynh_systemctl --service="$app" --action="start"
 
 ynh_systemctl --service=nginx --action=reload
 
